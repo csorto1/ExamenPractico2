@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My EXAMEN ARQUITECTURA DE SOFTWARE</h1>
+
+<p>INFORMACION EN CONSOLA.</p>
+
+</body>
+
+<script>
+
+// Principio de Responsabilidad Única (Single Responsibility Principle)
+// Cada clase debe tener una única responsabilidad.
+
+// Clase base para todos los vehículos
+class Vehicle {
+  constructor(make, model) {
+    this.make = make;
+    this.model = model;
+  }
+
+  getMake() {
+    return this.make;
+  }
+
+  getModel() {
+    return this.model;
+  }
+}
+
+// Principio de Abierto/Cerrado (Open/Closed Principle)
+// Las clases deben estar abiertas para la extensión pero cerradas para la modificación.
+
+// Clase para automóviles
+class Car extends Vehicle {
+  constructor(make, model, numDoors) {
+    super(make, model);
+    this.numDoors = numDoors;
+  }
+
+  getNumDoors() {
+    return this.numDoors;
+  }
+}
+
+// Clase para motocicletas
+class Motorcycle extends Vehicle {
+  constructor(make, model, numWheels) {
+    super(make, model);
+    this.numWheels = numWheels;
+  }
+
+  getNumWheels() {
+    return this.numWheels;
+  }
+}
+
+// Clase para camiones
+class Truck extends Vehicle {
+  constructor(make, model, payloadCapacity) {
+    super(make, model);
+    this.payloadCapacity = payloadCapacity;
+  }
+
+  getPayloadCapacity() {
+    return this.payloadCapacity;
+  }
+}
+
+// Principio de Sustitución de Liskov (Liskov Substitution Principle)
+// Las instancias de las subclases deben poder sustituirse por instancias de la clase base.
+
+// Principio de Inversión de Dependencias (Dependency Inversion Principle)
+// Los módulos de alto nivel no deben depender de los detalles de implementación de los módulos de bajo nivel. Ambos deben depender de abstracciones.
+
+// Ejemplo de uso:
+const myCar = new Car('Toyota', 'Corolla', 4);
+const myMotorcycle = new Motorcycle('Honda', 'CBR600RR', 2);
+const myTruck = new Truck('Ford', 'F-150', '1000 kg');
+
+console.log(myCar.getMake(), myCar.getModel(), myCar.getNumDoors()); // Toyota Corolla 4
+console.log(myMotorcycle.getMake(), myMotorcycle.getModel(), myMotorcycle.getNumWheels()); // Honda CBR600RR 2
+console.log(myTruck.getMake(), myTruck.getModel(), myTruck.getPayloadCapacity()); // Ford F-150 1000 kg
+
+
+</script>
+</html>
+
